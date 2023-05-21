@@ -31,6 +31,7 @@
 - データオーギュメンテーションは不明
 ## テスト推論
 - 1つのモデルに画像のクロップを入力し、精度計算
+- all models were evaluated using Polyak averaging at inference time(←後で論文を読む：Acceleration of stochastic approximation by averaging. )
 ## 参考
 1. https://qiita.com/woodyZootopia/items/3adc613e7717b6b5a260
 2. https://arxiv.org/pdf/1610.02357.pdf
