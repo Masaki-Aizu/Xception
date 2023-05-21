@@ -2,7 +2,7 @@
 ## ポイント
 - 3x3 convの数自体は増えるが、1x1 convでチャンネルを1に圧縮し、それぞれのconvの計算量が激減させている
 - この時、もはや3x3 convは1チャンネルしか入力されていないので、**チャンネル同士の関係性を見ることはない**
-<img alt="Xception module" src=./image/xception_module.avif/>
+<img alt="Xception module" src=./image/xception_module.avif></img>
 - Residual connectionによって、精度も高く、さらに収束もより早くなっている
 - **このモジュールはXeception仮説に基づいて作成されている**
 - Xception仮説に基づいてXception ModelをGoogLeNetと同じくらいのパラメータ数で構築したら圧勝したというのが理論的バックグラウンド
@@ -15,7 +15,7 @@
 - Xception = pointwise conv + spacial conv　となる
 - 補足：Depthwise separable conv = spacial conv + pointwise conv（MobileNetに使用される構造）:入力チャンネルそれぞれにN×Nの畳み込みを行い、その後その出力をまとめた特徴量マップに1×1（チャンネル方向）の畳み込みを行う
 ## アーキテクチャ 
-<img alt="Xception" src=./image/Xception.avif/>
+<img alt="Xception" src=./image/Xception.avif></img>
 ## 学習方法
 #### On ImageNet:
 – Optimizer: SGD
