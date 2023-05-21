@@ -8,7 +8,8 @@
 - Xception仮説に基づいてXception ModelをGoogLeNetと同じくらいのパラメータ数で構築したら圧勝したというのが理論的バックグラウンド
 - InceptionV3の方が、ImageNetにおける精度が高かった。これはInceptionV3がImageNetに重点を置いて開発されており、設計上、この特定のタスクに過剰に適合している可能性があるためであると考えられる
 ## Xception仮説
-- channel correlation（チャンネル方向の相関）とspacial correlation（空間方向の相関）が完全に分離可能という仮説
+- channel correlation（チャンネル方向の相関）とspacial correlation（空間方向の相関）が**完全に**分離可能という仮説
+- Inceptionでは、空間方向の情報とチャンネル方向の情報は**ある程度**分離可能という仮説の元構築された
 # Xception Module
 - Depthwise separable convolutionにほぼ同じ
 - チャンネルごとに独立した空間方向convolutionとPointwise (1x1) convolutionのセット
@@ -35,6 +36,7 @@
 ## 参考
 1. https://qiita.com/woodyZootopia/items/3adc613e7717b6b5a260
 2. https://arxiv.org/pdf/1610.02357.pdf
+3. https://www.youtube.com/watch?v=9KOb-_oy45g&list=PLhDAH9aTfnxKXf__soUoAEOrbLAOnVHCP&index=18
 ## ※畳み込みまとめ
 - 畳み込み層は、2 つの空間次元 (幅と高さ) とチャネル次元を持つ 3D 空間でフィルターを学習しようとする。したがって、通常の畳み込み層は、**チャネル間相関と空間相関を同時にマッピングする役割を果たす**
 - インセプション モジュールは、まず **1x1 畳み込みを介してクロスチャネル相関を調べ、入力データを元の入力空間チャンネルよりも小さい3つ、または4つの個別の空間にマッピングし、次に、すべての相関をこれらの小さな 3D 空間にマッピングする**
